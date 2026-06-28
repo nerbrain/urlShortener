@@ -3,9 +3,9 @@ const Hero = () => {
         <div>
             <div className="h-80 bg-linear-to-tr from-[#4284a2d3] to-[#89bb9bd3] flex items-center justify-center">
                 {/* mobile view */}
-                <section className="block sm:hidden bg-[url('../src/assets/middle-hero.png')] bg-white m-4 p-3 rounded-md  space-y-2">
+                <section className="sm:hidden bg-[url('../src/assets/middle-hero.png')] bg-white m-4 p-3 rounded-md  space-y-2">
                     <p className="text-2xl font-semibold text-center">Connect your audience to the right information</p>
-                    <p className="text-md font-normal text-center">Shorten, brand, track and link in seconds</p>
+                    <p className="text-md font-light text-center">Shorten, brand, and track your links in seconds</p>
                     {/* url input */}
                     <div className="flex w-full justify-center">
                         <input className="w-full h-10 text-xs font-normal bg-white border border-gray-300 p-2 
@@ -18,6 +18,30 @@ const Hero = () => {
                         </button>
                     </div>
                     
+                </section>
+
+                {/* desktop view */}
+                <section className="hidden sm:block bg-[url('../src/assets/middle-hero.png')] bg-white m-8 p-10 rounded-md space-y-4">
+                    <p className="h-15 text-4xl font-semibold text-center">Connect your audience to the right information</p>
+                    <p className="h-10 text-2xl font-light text-center">Shorten, brand, and track your links in seconds</p>
+                    {/* url input */}
+                    <div className="flex w-full justify-center">
+                        <div className="flex w-full max-w-xl bg-white border-2 border-[#005B8B] rounded-md overflow-hidden transition-all duration-200 focus-within:border-[#005B8B] focus-within:ring-2 focus-within:ring-[#005b8b26]">
+                            
+                            <input 
+                            className="w-full text-lg font-normal bg-transparent p-2 focus:outline-0 placeholder-gray-400" 
+                            placeholder="https://www.example.com/your-long-url"
+                            />
+
+                            <button 
+                            className="w-40 text-white bg-[#005B8B] font-medium text-lg px-2 py-3 border border-[#005B8B] hover:bg-[#005a8bf2] transition-colors whitespace-nowrap"
+                            onClick={() => alert("Shorten Url")}
+                            >
+                            Shorten Url
+                            </button>
+                            
+                        </div>
+                    </div>
                 </section>
 
             </div>
