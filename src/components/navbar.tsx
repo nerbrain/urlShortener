@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="relative">
             {/* Main bar */}
-            <div className="flex items-center justify-between px-4 py-5 sm:px-8">
+            <div className="flex items-center justify-between px-4 py-5 sm:px-30">
                 {/* Logo — always on the left */}
                 <div className="font-bold text-xl text-gray-900">LOGO</div>
 
