@@ -1,48 +1,81 @@
 const Hero = () => {
     return(
         <div>
-            <div className="h-80 bg-linear-to-tr from-[#4284a2d3] to-[#89bb9bd3] flex items-center justify-center">
-                {/* mobile view */}
-                <section className="sm:hidden bg-[url('../src/assets/middle-hero.png')] bg-white m-4 p-3 rounded-md  space-y-2">
-                    <p className="text-2xl font-semibold text-center">Connect your audience to the right information</p>
-                    <p className="text-md font-light text-center">Shorten, brand, and track your links in seconds</p>
-                    {/* url input */}
-                    <div className="flex w-full justify-center">
-                        <input className="w-full h-10 text-xs font-normal bg-white border border-gray-300 p-2 
-                        rounded-md " placeholder="https://www.example.com/your-long-url"/>
-                    </div>
-                    <div className="w-full flex justify-center">
-                        <button className="w-40 text-white bg-[#005B8B] font-medium rounded-sm text-sm px-2 py-3 hover:bg-[#005a8bf2] transition-colors"
-                        onClick={() => alert("Shorten Url")}>
-                            Shorten Url
-                        </button>
-                    </div>
-                    
-                </section>
-
-                {/* desktop view */}
-                <section className="hidden sm:block bg-[url('../src/assets/middle-hero.png')] bg-white m-8 p-10 rounded-md space-y-4">
-                    <p className="h-15 text-4xl font-semibold text-center">Connect your audience to the right information</p>
-                    <p className="h-10 text-2xl font-light text-center">Shorten, brand, and track your links in seconds</p>
-                    {/* url input */}
-                    <div className="flex w-full justify-center">
-                        <div className="flex w-full max-w-xl bg-white border-2 border-[#005B8B] rounded-md overflow-hidden transition-all duration-200 focus-within:border-[#005B8B] focus-within:ring-2 focus-within:ring-[#005b8b26]">
-                            
-                            <input 
-                            className="w-full text-lg font-normal bg-transparent p-2 focus:outline-0 placeholder-gray-400" 
-                            placeholder="https://www.example.com/your-long-url"
-                            />
-
-                            <button 
-                            className="w-40 text-white bg-[#005B8B] font-medium text-lg px-2 py-3 border border-[#005B8B] hover:bg-[#005a8bf2] transition-colors whitespace-nowrap"
-                            onClick={() => alert("Shorten Url")}
-                            >
-                            Shorten Url
-                            </button>
-                            
+            <div className="bg-linear-to-tr from-[#4284a2d3] to-[#89bb9bd3] flex items-center justify-center">
+                
+                {/* Mobile view — up to 639px */}
+                <div className="sm:hidden h-80">
+                    <section className="bg-[url('../src/assets/middle-hero.png')] bg-white m-4 p-3 rounded-md space-y-2">
+                        <p className="text-2xl font-semibold text-center">Connect your audience to the right information</p>
+                        <p className="text-md font-light text-center">Shorten, brand, and track your links in seconds</p>
+                        <div className="flex w-full justify-center">
+                            <input className="w-full h-10 text-xs font-normal bg-white border border-gray-300 p-2 rounded-md"
+                                placeholder="https://www.example.com/your-long-url"/>
                         </div>
-                    </div>
-                </section>
+                        <div className="w-full flex justify-center">
+                            <button className="w-40 text-white bg-[#005B8B] font-medium rounded-sm text-sm px-2 py-3 hover:bg-[#005a8bf2] transition-colors"
+                                onClick={() => alert("Shorten Url")}>
+                                Shorten Url
+                            </button>
+                        </div>
+                        <div className="w-full flex justify-center items-center">
+                            <img className="h-5 justify-center" src="../src/assets/check-mark.png"/>
+                            <p className="text-xs font-medium">No Signup Required</p>
+                        </div>
+                    </section>
+                </div>
+
+                {/* Tablet view — 640px to 767px */}
+                <div className="hidden sm:flex lg:hidden py-10 px-6 w-full justify-center">
+                    <section className="bg-[url('../src/assets/middle-hero.png')] bg-white w-full max-w-2xl p-8 rounded-xl space-y-4 flex flex-col justify-center">
+                        <p className="text-3xl font-semibold text-center">Connect your audience to the right information</p>
+                        <p className="text-xl font-light text-center">Shorten, brand, and track your links in seconds</p>
+                        <div className="flex w-full justify-center mt-4">
+                            <div className="flex h-13 w-full max-w-xl bg-white border-2 border-[#005B8B] rounded-xl overflow-hidden focus-within:ring-2 focus-within:ring-[#005b8b26]">
+                                <input
+                                    className="w-full text-sm font-normal bg-transparent p-2 focus:outline-0 placeholder-gray-400"
+                                    placeholder="https://www.example.com/your-long-url"
+                                />
+                                <button
+                                    className="w-40 text-white bg-[#005B8B] font-medium text-sm px-3 py-2 border border-[#005B8B] hover:bg-[#005a8bf2] transition-colors whitespace-nowrap"
+                                    onClick={() => alert("Shorten Url")}
+                                >
+                                    Shorten Url
+                                </button>
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-center items-center gap-1 mt-1">
+                            <img className="h-5" src="../src/assets/check-mark.png"/>
+                            <p className="text-sm font-medium">No Signup Required</p>
+                        </div>
+                    </section>
+                </div>
+
+                {/* Desktop view — 1024px and up */}
+                <div className="hidden lg:block h-110">
+                    <section className="w-auto h-80 bg-[url('../src/assets/middle-hero.png')] bg-white mt-18 rounded-xl space-y-2 flex flex-col justify-center pl-3 pr-3">
+                        <p className="h-10 text-5xl font-medium text-center">Connect your audience to the right information</p>
+                        <p className="h-10 mt-2 text-3xl font-light text-center">Shorten, brand, and track your links in seconds</p>
+                        <div className="flex w-full justify-center mt-10">
+                            <div className="flex h-17 w-full max-w-3xl bg-white border-2 border-[#005B8B] rounded-xl overflow-hidden transition-all duration-200 focus-within:border-[#005B8B] focus-within:ring-2 focus-within:ring-[#005b8b26]">
+                                <input
+                                    className="w-full text-lg font-normal bg-transparent p-2 focus:outline-0 placeholder-gray-400"
+                                    placeholder="https://www.example.com/your-long-url"
+                                />
+                                <button
+                                    className="w-60 text-white bg-[#005B8B] font-medium text-lg px-2 py-3 border border-[#005B8B] hover:bg-[#005a8bf2] transition-colors whitespace-nowrap"
+                                    onClick={() => alert("Shorten Url")}
+                                >
+                                    Shorten Url
+                                </button>
+                            </div>
+                        </div>
+                        <div className="w-full flex justify-end items-center pr-34 mt-0.5">
+                            <img className="h-7 justify-center" src="../src/assets/check-mark.png"/>
+                            <p className="font-medium">No Signup Required</p>
+                        </div>
+                    </section>
+                </div>
 
             </div>
             <div>
@@ -56,7 +89,6 @@ const Hero = () => {
                         90C1245.28 83 1348.39 44.29 1440 5.19V0H0Z" fill="#76A6BA"/>
                 </svg>
             </div>
-
         </div>
     )
 }
