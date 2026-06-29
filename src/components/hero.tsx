@@ -70,7 +70,7 @@ const Hero = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="w-full flex justify-end items-center pr-34 mt-0.5">
+                        <div className="w-full flex justify-end items-center pr-27 mt-0.5">
                             <img className="h-7 justify-center" src="../src/assets/check-mark.png"/>
                             <p className="font-medium">No Signup Required</p>
                         </div>
