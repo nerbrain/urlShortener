@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isLoginClicked, setLoginClicked] = useState(false)
+    const [isLoginClicked, setLoginClicked] = useState(false);
 
     return (
         <nav className="relative">
@@ -12,7 +11,7 @@ const Navbar = () => {
                 {/* Logo — always on the left */}
                 <div className="font-bold text-xl text-gray-900">LOGO</div>
 
-                {/* Desktop nav — hidden on mobile */}
+                {/* Desktop/Tablet nav — hidden on mobile */}
                 <ul className="hidden sm:flex items-center space-x-5 list-none">
                     <li>
                         <button className="py-2 text-gray-700 hover:text-gray-900">
@@ -20,7 +19,10 @@ const Navbar = () => {
                         </button>
                     </li>
                     <li>
-                        <button className="py-2 text-gray-700 hover:text-gray-900">
+                        <button
+                            className="py-2 text-gray-700 hover:text-gray-900"
+                            onClick={() => setLoginClicked(true)}
+                        >
                             Log In
                         </button>
                     </li>
@@ -40,21 +42,9 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Toggle menu"
                 >
-                    <span
-                        className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-200 ${
-                            menuOpen ? "rotate-45 translate-y-2" : ""
-                        }`}
-                    />
-                    <span
-                        className={`block h-0.5 w-6 bg-gray-800 transition-opacity duration-200 ${
-                            menuOpen ? "opacity-0" : ""
-                        }`}
-                    />
-                    <span
-                        className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-200 ${
-                            menuOpen ? "-rotate-45 -translate-y-2" : ""
-                        }`}
-                    />
+                    <span className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-200 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+                    <span className={`block h-0.5 w-6 bg-gray-800 transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`} />
+                    <span className={`block h-0.5 w-6 bg-gray-800 transition-transform duration-200 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
                 </button>
             </div>
 
@@ -68,7 +58,10 @@ const Navbar = () => {
                             </button>
                         </li>
                         <li>
-                            <button className="w-full text-left py-2 text-gray-700 hover:text-gray-900" onClick ={ ()=> setLoginClicked(true)}>
+                            <button
+                                className="w-full text-left py-2 text-gray-700 hover:text-gray-900"
+                                onClick={() => { setLoginClicked(true); setMenuOpen(false); }}
+                            >
                                 Log In
                             </button>
                         </li>
@@ -84,26 +77,64 @@ const Navbar = () => {
                 </div>
             )}
 
+            {/* Login Modal — shared across all viewpoints */}
             {isLoginClicked && (
-                <div className="fixed bg-gray-300/50 min-h-screen z-10 w-screen flex 
-                justify-center items-center top-0 left-0">
-                    <div className="block bg-white p-5 rounded-2xl w-75">
-                        <div className="flex justify-between items-center">
+                <div
+                    className="fixed inset-0 bg-gray-300/50 z-10 flex justify-center items-center"
+                    onClick={() => setLoginClicked(false)}  // close on backdrop click
+                >
+                    <div
+                        className="bg-white p-6 rounded-2xl w-full max-w-sm mx-4 shadow-lg"
+                        onClick={(e) => e.stopPropagation()}  // prevent backdrop close when clicking inside
+                    >
+                        {/* Modal header */}
+                        <div className="flex justify-between items-center mb-4">
                             <p className="text-xl font-medium">Log in</p>
-                            <p className="text-sm font-normal text-red-600"
-                                onClick={() => setLoginClicked(false)}>Close</p>
+                            <button
+                                className="w-8 h-8 flex flex-col justify-center gap-1.5"
+                                onClick={() => setLoginClicked(false)}
+                                aria-label="Close"
+                            >
+                                <span className="block h-0.5 w-6 bg-gray-800 rotate-45 translate-y-[3.5px]" />
+                                <span className="block h-0.5 w-6 bg-gray-800 -rotate-45 -translate-y-[3.5px]" />
+                            </button>
                         </div>
-                        
-                        <p className="text-md pt-2">Email</p>
-                        <input className="w-full border-[#4283A2] border-2 p-2 rounded-lg mt-2" 
-                            placeholder="Email"/>
-                        <p className="text-md pt-2">Password</p>
-                        <input className="w-full border-[#4283A2] border-2 p-2 rounded-lg mt-2" 
-                            placeholder="Password"/>
-                        
-                        <button className="align-middle w-full bg-[#4283A2] p-2 mt-3 rounded-md
-                            text-white font-normal hover:bg-[#005a8bf2] transition-colors">Log in</button>
-                    </div> 
+
+                        {/* Fields */}
+                        <div className="space-y-3">
+                            <div>
+                                <p className="text-sm font-medium mb-1">Email</p>
+                                <input
+                                    className="w-full border-[#4283A2] border-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005b8b40]"
+                                    placeholder="you@example.com"
+                                    type="email"
+                                />
+                            </div>
+                            <div>
+                                <div className="flex justify-between items-center mb-1">
+                                    <p className="text-sm font-medium">Password</p>
+                                    <button className="text-xs text-[#005B8B] hover:underline">Forgot password?</button>
+                                </div>
+                                <input
+                                    className="w-full border-[#4283A2] border-2 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#005b8b40]"
+                                    placeholder="••••••••"
+                                    type="password"
+                                />
+                            </div>
+                        </div>
+
+                        <button
+                            className="w-full bg-[#005B8B] p-2.5 mt-5 rounded-md text-white font-medium hover:bg-[#005a8bf2] transition-colors"
+                            onClick={() => alert("Logging in...")}
+                        >
+                            Log in
+                        </button>
+
+                        <p className="text-center text-sm text-gray-500 mt-4">
+                            Don't have an account?{" "}
+                            <button className="text-[#005B8B] font-medium hover:underline">Sign up</button>
+                        </p>
+                    </div>
                 </div>
             )}
         </nav>
