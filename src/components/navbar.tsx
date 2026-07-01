@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isLoginClicked, setLoginClicked] = useState(false)
 
     return (
         <nav className="relative">
@@ -66,7 +68,7 @@ const Navbar = () => {
                             </button>
                         </li>
                         <li>
-                            <button className="w-full text-left py-2 text-gray-700 hover:text-gray-900">
+                            <button className="w-full text-left py-2 text-gray-700 hover:text-gray-900" onClick ={ ()=> setLoginClicked(true)}>
                                 Log In
                             </button>
                         </li>
@@ -79,6 +81,29 @@ const Navbar = () => {
                             </button>
                         </li>
                     </ul>
+                </div>
+            )}
+
+            {isLoginClicked && (
+                <div className="fixed bg-gray-300/50 min-h-screen z-10 w-screen flex 
+                justify-center items-center top-0 left-0">
+                    <div className="block bg-white p-5 rounded-2xl w-75">
+                        <div className="flex justify-between items-center">
+                            <p className="text-xl font-medium">Log in</p>
+                            <p className="text-sm font-normal text-red-600"
+                                onClick={() => setLoginClicked(false)}>Close</p>
+                        </div>
+                        
+                        <p className="text-md pt-2">Email</p>
+                        <input className="w-full border-[#4283A2] border-2 p-2 rounded-lg mt-2" 
+                            placeholder="Email"/>
+                        <p className="text-md pt-2">Password</p>
+                        <input className="w-full border-[#4283A2] border-2 p-2 rounded-lg mt-2" 
+                            placeholder="Password"/>
+                        
+                        <button className="align-middle w-full bg-[#4283A2] p-2 mt-3 rounded-md
+                            text-white font-normal hover:bg-[#005a8bf2] transition-colors">Log in</button>
+                    </div> 
                 </div>
             )}
         </nav>

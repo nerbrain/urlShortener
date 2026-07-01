@@ -1,7 +1,7 @@
 const Details = () => {
     return (
 
-        <div className="p-5">
+        <div className="p-5 pb-10">
             {/*Mobile view*/}
             <div className="sm:hidden flex flex-col items-center space-y-6">
                 <div className="justify-center w-auto bg-white border-gray-200 p-10 space-y-2 rounded-xl shadow-xl/20">

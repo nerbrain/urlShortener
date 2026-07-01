@@ -1,4 +1,5 @@
 const Hero = () => {
+
     return(
         <div>
             <div className="bg-linear-to-tr from-[#4284a2d3] to-[#89bb9bd3] flex items-center justify-center">
@@ -9,7 +10,7 @@ const Hero = () => {
                         <p className="text-2xl font-semibold text-center">Connect your audience to the right information</p>
                         <p className="text-md font-light text-center">Shorten, brand, and track your links in seconds</p>
                         <div className="flex w-full justify-center">
-                            <input className="w-full h-10 text-xs font-normal bg-white border border-gray-300 p-2 rounded-md"
+                            <input className="w-full h-10 text-xs font-normal bg-white border-2 border-[#005B8B] p-2 rounded-md"
                                 placeholder="https://www.example.com/your-long-url"/>
                         </div>
                         <div className="w-full flex justify-center">
@@ -44,9 +45,9 @@ const Hero = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="w-full flex justify-center items-center gap-1 mt-1">
+                        <div className="w-full flex justify-end items-center gap-1">
                             <img className="h-5" src="../src/assets/check-mark.png"/>
-                            <p className="text-sm font-medium">No Signup Required</p>
+                            <p className="text-[12px] pr-2 font-medium">No Signup Required</p>
                         </div>
                     </section>
                 </div>
