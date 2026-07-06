@@ -1,8 +1,11 @@
+import { useNavigate } from "@tanstack/react-router";
 import React, { useState } from "react";
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isLoginClicked, setLoginClicked] = useState(false);
+
+    const navigate = useNavigate();
 
     return (
         <nav className="relative">
@@ -14,7 +17,7 @@ const Navbar = () => {
                 {/* Desktop/Tablet nav — hidden on mobile */}
                 <ul className="hidden sm:flex items-center space-x-5 list-none">
                     <li>
-                        <button className="py-2 text-gray-700 hover:text-gray-900">
+                        <button className="py-2 text-gray-700 hover:text-gray-900" onClick={()=> {navigate({to: "/dashboard"})}}>
                             Dashboard
                         </button>
                     </li>
@@ -53,7 +56,7 @@ const Navbar = () => {
                 <div className="sm:hidden border-t border-gray-100 px-4 pb-4">
                     <ul className="flex flex-col space-y-1 pt-3 list-none">
                         <li>
-                            <button className="w-full text-left py-2 text-gray-700 hover:text-gray-900">
+                            <button className="w-full text-left py-2 text-gray-700 hover:text-gray-900" onClick={()=> {navigate({to: "/dashboard"})}}>
                                 Dashboard
                             </button>
                         </li>
