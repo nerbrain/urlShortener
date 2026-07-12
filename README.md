@@ -27,7 +27,11 @@ This project was built to explore a full-featured product experience: authentica
 
 ![App Screenshot](./screenshots/urlShortenerDashboardIndex.jpeg)
 ![App Screenshot](./screenshots/urlShortenerDashboardLinks.jpeg)
+![App Screenshot](./screenshots/urlShortenerDashboardNewLink.jpeg)
 ![App Screenshot](./screenshots/urlShortenerDashboardForms.jpeg)
+![App Screenshot](./screenshots/urlShortenerDashboardNewForm1.jpeg)
+![App Screenshot](./screenshots/urlShortenerDashboardNewForm2.jpeg)
+![App Screenshot](./screenshots/urlShortenerDashboardNewForm3.jpeg)
 ![App Screenshot](./screenshots/urlShortenerDashboardAnalytics.jpeg)
 ![App Screenshot](./screenshots/urlShortenerDashboardSettings.jpeg)
 
