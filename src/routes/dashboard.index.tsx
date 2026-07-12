@@ -108,10 +108,10 @@ function DashboardPage() {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
           <div className="flex items-center gap-3">
-            <button className="text-sm bg-[#005B8B] text-white px-4 py-2 rounded-lg hover:bg-[#005a8bf2] transition-colors">
+            {/* <button className="text-sm bg-[#005B8B] text-white px-4 py-2 rounded-lg hover:bg-[#005a8bf2] transition-colors">
               + New Link
-            </button>
-            <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">M</div>
+            </button> */}
+            <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">J</div>
           </div>
         </div>
 

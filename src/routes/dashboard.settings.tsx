@@ -6,8 +6,8 @@ export const Route = createFileRoute('/dashboard/settings')({
 })
 
 function SettingsPage() {
-  const [name, setName] = useState('Malik')
-  const [email, setEmail] = useState('malik@example.com')
+  const [name, setName] = useState('Jane')
+  const [email, setEmail] = useState('janedoe@example.com')
   const [notifications, setNotifications] = useState(true)
   const [weeklyDigest, setWeeklyDigest] = useState(false)
 
@@ -75,7 +75,7 @@ function SettingsPage() {
       <div className="hidden sm:block p-6 md:p-8">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-semibold text-gray-800">Settings</h1>
-          <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">M</div>
+          <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">J</div>
         </div>
 
         <div className="max-w-2xl space-y-4">

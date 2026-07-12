@@ -82,10 +82,10 @@ function DashboardLayout() {
           </div>
 
           <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/10">
-            <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white text-xs font-bold">M</div>
+            <div className="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white text-xs font-bold">J</div>
             <div className="flex-1 min-w-0">
-              <p className="text-white text-xs font-medium truncate">Malik</p>
-              <p className="text-white/60 text-xs truncate">malik@example.com</p>
+              <p className="text-white text-xs font-medium truncate">Jane</p>
+              <p className="text-white/60 text-xs truncate">janedoe@example.com</p>
             </div>
           </div>
         </aside>

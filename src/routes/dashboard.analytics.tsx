@@ -59,7 +59,7 @@ function AnalyticsPage() {
       <div className="hidden sm:block p-6 md:p-8">
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-2xl font-semibold text-gray-800">Analytics</h1>
-          <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">M</div>
+          <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">J</div>
         </div>
 
         {/* Summary stats */}

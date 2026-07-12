@@ -363,7 +363,7 @@ function FormsPage() {
             >
               + New Form
             </button>
-            <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">M</div>
+            <div className="w-9 h-9 rounded-full bg-[#5D8DA1] flex items-center justify-center text-white text-sm font-bold">J</div>
           </div>
         </div>
 
